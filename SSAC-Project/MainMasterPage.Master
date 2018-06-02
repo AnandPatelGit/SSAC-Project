@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMasterPage.master.cs" Inherits="SSAC_Project.MainMasterPage" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="App_Themes/SSAC Theme/SSAC_StyleSheet.css" rel="stylesheet"/> 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+       
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 1113px;
+        }
+        .auto-style2 {
+            width: 264px;
+        }
+    </style>
+</head>
+<body >
+    <form id="form1" runat="server">
+        <div class="header"> 
+            <table class="auto-style1">
+                <tr>
+            <td class="auto-style2"><asp:Image id="Logo" runat="server" ImageUrl="~/Images/SSACLogo.png" Height="55px" Width="256px" AlternateText="SSAC Logo" /></td>
+           <td> <asp:Label ID="lblHeader" Text="Secure Services for All Customers" runat="server" ForeColor="SteelBlue"  Font-Size="Larger" Font-Names="Verdana" Font-Bold="true" /></td>
+            <td><asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="menu1">
+                <DynamicMenuStyle BackColor="WhiteSmoke" />
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Department_SSAC.aspx" Text="View By Department" ToolTip="Redirects to the Department Page" Value="View By Department">
+                        <asp:MenuItem NavigateUrl="~/BooksDepartmentSSAC.aspx" Text="Books" Value="Books"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ClothesDepartmentSSAC.aspx" Text="Clothes" Value="Clothes"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ElectronicsDepartmentSSAC.aspx" Text="Electronics" Value="Electronics"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/HomeDepartmentSSAC.aspx" Text="Home Accessories" Value="Home Accessories"></asp:MenuItem>        
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/LoginPage.aspx" Text="Login" ToolTip="Redirects to the Login Page" Value="Login"/>
+                    <asp:MenuItem NavigateUrl="~/RegisterPage.aspx" Text="Register" ToolTip="Redirects to the Register Page" Value="Register"/>
+                </Items>
+            </asp:Menu></td>
+                    <td><asp:Label ID="lblName" Text="Welcome" runat="server" Font-Size="Larger" Font-Names="Verdana" Font-Bold="true" /></td>
+                    <td><asp:ImageButton ID="imgBtnCart"  Text="" runat="server" ImageUrl="~/Images/Cart_SSAC.png" Height="50px" Width="50px" /><asp:Label ID="lblCart" Text="" runat="server" Font-Size="Larger" Font-Names="Verdana" Font-Bold="true" /></td>
+                    </table>
+        </div>
+        <div class="UserControlDiv" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" />
+            <asp:UpdatePanel ID="up1" runat="server" >
+                <ContentTemplate>
+                    <asp:AdRotator ID="AdRotator1" AdvertisementFile="~/App_Data/Ads.xml" runat="server" CssClass="ad"   />
+                    <asp:Timer ID="Timer1" Interval="3000" runat="server" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+          </div>
+        <div class="menu">
+            <asp:SiteMapDataSource ID="smds" runat="server" ShowStartingNode="false"/>
+            <asp:Menu ID="menu" runat="server" DataSourceID="smds" ForeColor="SlateBlue" StaticSubMenuIndent="16px">
+                <StaticItemTemplate>
+                    <img src="Images/BulletRight.png" alt= "+" width="16" height="16" style="border-width: 0;" />
+            <%# Eval("Text") %>
+          </StaticItemTemplate>
+        </asp:Menu>
+        </div>
+         
+        <div class="content">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <div class="footer"> 
+            <asp:Label ID="lblFooter" Text="@SSAC-Shrish Surya Anand Chaithanya" runat="server" />
+        </div>
+    </form>  
+</body>
+</html>

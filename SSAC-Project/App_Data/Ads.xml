@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/Images/Clothes_SSAC.jpg</ImageUrl>
+    <Height>200px</Height>
+    <Width>900px</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Books_SSAC.jpg</ImageUrl>
+    <Height>200px</Height>
+    <Width>900px</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Electronics_SSAC.jpg</ImageUrl>
+    <Height>200px</Height>
+    <Width>900px</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Furniture_SSAC.jpg</ImageUrl>
+    <Height>200px</Height>
+    <Width>900px</Width>
+  </Ad>
+</Advertisements>
